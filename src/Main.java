@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Set<String> mass=validate("asdsd");
+        Set<String> mass=validate("asd{s}d}");
         for(String str:mass){
             System.out.println(str);
         }
@@ -14,7 +14,7 @@ public class Main {
     static public Set<String> validate(String input){
         Set<String> corrStr=new HashSet<>();
 
-        if((input.contains("{")==false)&&(input.contains("}")==false)){
+        if((!input.contains("{"))&&(!input.contains("}"))){
             corrStr.add(input);
             return corrStr;
         }

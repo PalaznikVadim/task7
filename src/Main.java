@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Set<String> mass=validate("{0}0}0{}}");
+        Set<String> mass=validate("asdsd");
         for(String str:mass){
             System.out.println(str);
         }
@@ -12,8 +12,13 @@ public class Main {
     // функция, возвращающая правильные скобковые выражения,
     // полученые путем удаления минимального количества лишних скобок
     static public Set<String> validate(String input){
-
         Set<String> corrStr=new HashSet<>();
+
+        if((input.contains("{")==false)&&(input.contains("}")==false)){
+            corrStr.add(input);
+            return corrStr;
+        }
+
 
         ArrayDeque<String> queue = new ArrayDeque<String>();
 

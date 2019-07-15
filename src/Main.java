@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Set<String> mass=validate("{asd");
+        Set<String> mass=validate("{a}sd");
         for(String str:mass){
             System.out.println(str);
         }

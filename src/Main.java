@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Set<String> mass=validate("asd{s}d}");
+        Set<String> mass=validate("{asd");
         for(String str:mass){
             System.out.println(str);
         }
@@ -14,12 +14,6 @@ public class Main {
     static public Set<String> validate(String input){
         Set<String> corrStr=new HashSet<>();
 
-        if((!input.contains("{"))&&(!input.contains("}"))){
-            corrStr.add(input);
-            return corrStr;
-        }
-
-
         ArrayDeque<String> queue = new ArrayDeque<String>();
 
         String temp=new String();
@@ -29,7 +23,6 @@ public class Main {
         while(!queue.isEmpty()) {
             input = queue.pop();
             if (isRight(input)) {
-                if (input.contains("{"))
                     corrStr.add(input);
                 continue;
             }
